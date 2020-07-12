@@ -34,6 +34,15 @@
 		FC55F2A224BBB0A1000A9417 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC55F2A024BBAFEF000A9417 /* ImageCache.swift */; };
 		FC55F2A324BBB0A1000A9417 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC55F2A024BBAFEF000A9417 /* ImageCache.swift */; };
 		FC55F2A424BBB0A2000A9417 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC55F2A024BBAFEF000A9417 /* ImageCache.swift */; };
+		FC55F2A624BBB5F1000A9417 /* ArticleDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC55F2A524BBB5F1000A9417 /* ArticleDetailViewController.swift */; };
+		FC55F2AD24BBB947000A9417 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC55F2AC24BBB947000A9417 /* Header.swift */; };
+		FC55F2AE24BBB947000A9417 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC55F2AC24BBB947000A9417 /* Header.swift */; };
+		FC55F2AF24BBB947000A9417 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC55F2AC24BBB947000A9417 /* Header.swift */; };
+		FC55F2B024BBB947000A9417 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC55F2AC24BBB947000A9417 /* Header.swift */; };
+		FC55F2B224BBC1D7000A9417 /* UIView+Margin.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC55F2B124BBC1D7000A9417 /* UIView+Margin.swift */; };
+		FC55F2B324BBC1D7000A9417 /* UIView+Margin.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC55F2B124BBC1D7000A9417 /* UIView+Margin.swift */; };
+		FC55F2B424BBC1D7000A9417 /* UIView+Margin.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC55F2B124BBC1D7000A9417 /* UIView+Margin.swift */; };
+		FC55F2B524BBC1D7000A9417 /* UIView+Margin.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC55F2B124BBC1D7000A9417 /* UIView+Margin.swift */; };
 		FCD2EB4524B6A05D00CFFCB7 /* UIView+Padding.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD2EB4424B6A05D00CFFCB7 /* UIView+Padding.swift */; };
 		FCD2EB4624B6A06300CFFCB7 /* UIView+Padding.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD2EB4424B6A05D00CFFCB7 /* UIView+Padding.swift */; };
 		FCD2EB4724B6A06300CFFCB7 /* UIView+Padding.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD2EB4424B6A05D00CFFCB7 /* UIView+Padding.swift */; };
@@ -112,6 +121,9 @@
 		FC55F29724BBA2EF000A9417 /* UIImageView+LoadImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+LoadImage.swift"; sourceTree = "<group>"; };
 		FC55F29E24BBAA79000A9417 /* String+URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+URL.swift"; sourceTree = "<group>"; };
 		FC55F2A024BBAFEF000A9417 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
+		FC55F2A524BBB5F1000A9417 /* ArticleDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailViewController.swift; sourceTree = "<group>"; };
+		FC55F2AC24BBB947000A9417 /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
+		FC55F2B124BBC1D7000A9417 /* UIView+Margin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Margin.swift"; sourceTree = "<group>"; };
 		FCD2EB4424B6A05D00CFFCB7 /* UIView+Padding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Padding.swift"; sourceTree = "<group>"; };
 		FCD2EB4924B6A21A00CFFCB7 /* UIWindow+EntryPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIWindow+EntryPoint.swift"; sourceTree = "<group>"; };
 		FCFDE05524B6902D00FA9F06 /* Swift News.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Swift News.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -265,6 +277,7 @@
 		FCFDE08924B6920400FA9F06 /* detail */ = {
 			isa = PBXGroup;
 			children = (
+				FC55F2A524BBB5F1000A9417 /* ArticleDetailViewController.swift */,
 			);
 			path = detail;
 			sourceTree = "<group>";
@@ -313,6 +326,7 @@
 				FCD2EB4424B6A05D00CFFCB7 /* UIView+Padding.swift */,
 				FC55F28D24BB9C91000A9417 /* UIViewController+Alert.swift */,
 				FC55F29724BBA2EF000A9417 /* UIImageView+LoadImage.swift */,
+				FC55F2B124BBC1D7000A9417 /* UIView+Margin.swift */,
 			);
 			path = extension;
 			sourceTree = "<group>";
@@ -321,6 +335,7 @@
 			isa = PBXGroup;
 			children = (
 				FC55F29224BBA03E000A9417 /* ArticleTableViewCell.swift */,
+				FC55F2AC24BBB947000A9417 /* Header.swift */,
 			);
 			path = component;
 			sourceTree = "<group>";
@@ -626,10 +641,13 @@
 				FC55F28624BB97AB000A9417 /* ArticleFeedPresenter.swift in Sources */,
 				FC55F29F24BBAA79000A9417 /* String+URL.swift in Sources */,
 				FC55F2A224BBB0A1000A9417 /* ImageCache.swift in Sources */,
+				FC55F2AD24BBB947000A9417 /* Header.swift in Sources */,
 				FC2B667024B6A8FD00416F6B /* Api+Articles.swift in Sources */,
 				FC2B667424B6AD7300416F6B /* Article.swift in Sources */,
 				FCD2EB4A24B6A21A00CFFCB7 /* UIWindow+EntryPoint.swift in Sources */,
+				FC55F2B224BBC1D7000A9417 /* UIView+Margin.swift in Sources */,
 				FCFDE05924B6902D00FA9F06 /* AppDelegate.swift in Sources */,
+				FC55F2A624BBB5F1000A9417 /* ArticleDetailViewController.swift in Sources */,
 				FC55F29924BBA3E1000A9417 /* UIImageView+LoadImage.swift in Sources */,
 				FC55F29324BBA03E000A9417 /* ArticleTableViewCell.swift in Sources */,
 				FCD2EB4624B6A06300CFFCB7 /* UIView+Padding.swift in Sources */,
@@ -642,8 +660,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC55F2AE24BBB947000A9417 /* Header.swift in Sources */,
 				FC55F29A24BBA3E2000A9417 /* UIImageView+LoadImage.swift in Sources */,
 				FCFDE07024B6902F00FA9F06 /* swiftnewsTests.swift in Sources */,
+				FC55F2B324BBC1D7000A9417 /* UIView+Margin.swift in Sources */,
 				FCFDE09D24B692A400FA9F06 /* UIView+Anchor.swift in Sources */,
 				FC55F2A324BBB0A1000A9417 /* ImageCache.swift in Sources */,
 				FCFDE0A424B6930200FA9F06 /* Spacing.swift in Sources */,
@@ -658,8 +678,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC55F2AF24BBB947000A9417 /* Header.swift in Sources */,
 				FC55F29B24BBA3E2000A9417 /* UIImageView+LoadImage.swift in Sources */,
 				FCFDE07B24B6902F00FA9F06 /* swiftnewsUITests.swift in Sources */,
+				FC55F2B424BBC1D7000A9417 /* UIView+Margin.swift in Sources */,
 				FCFDE09E24B692A400FA9F06 /* UIView+Anchor.swift in Sources */,
 				FC55F2A424BBB0A2000A9417 /* ImageCache.swift in Sources */,
 				FCFDE0A524B6930200FA9F06 /* Spacing.swift in Sources */,
@@ -675,10 +697,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC55F29124BB9C91000A9417 /* UIViewController+Alert.swift in Sources */,
+				FC55F2B024BBB947000A9417 /* Header.swift in Sources */,
 				FCFDE09F24B692A400FA9F06 /* UIView+Anchor.swift in Sources */,
 				FC55F2A124BBAFEF000A9417 /* ImageCache.swift in Sources */,
 				FCFDE0A624B6930200FA9F06 /* Spacing.swift in Sources */,
 				FC55F29824BBA2EF000A9417 /* UIImageView+LoadImage.swift in Sources */,
+				FC55F2B524BBC1D7000A9417 /* UIView+Margin.swift in Sources */,
 				FCD2EB4524B6A05D00CFFCB7 /* UIView+Padding.swift in Sources */,
 				FC55F29624BBA03E000A9417 /* ArticleTableViewCell.swift in Sources */,
 				FCFDE0AB24B6934300FA9F06 /* Padding.swift in Sources */,

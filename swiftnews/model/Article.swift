@@ -43,6 +43,27 @@ struct Article : Decodable {
     let thumbnail : String?
     let body : String
     
+    init(from decoder : Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        
+        title = try container.decode(String.self, forKey: .title)
+        body = try container.decode(String.self, forKey: .body)
+        
+        // Some thumbnails contain non-valid links. Check links and set appropriately.
+        let thumbnail = try container.decodeIfPresent(String.self, forKey: .thumbnail)
+        guard let thumbnailUrl = thumbnail else {
+            self.thumbnail = nil
+            return
+        }
+        
+        if thumbnailUrl.isValidUrl() {
+            self.thumbnail = thumbnailUrl
+        } else {
+            self.thumbnail = nil
+        }
+
+    }
+    
     enum CodingKeys : String, CodingKey {
         case title
         case thumbnail

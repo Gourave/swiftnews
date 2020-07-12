@@ -10,6 +10,7 @@ import UIKit
 
 extension UIView {
     
+    // Idea from https://github.com/bhlvoong/LBTAComponents/blob/master/LBTAComponents/Classes/UIView%2BAnchors.swift
     func anchor(top: NSLayoutYAxisAnchor?,
                 left: NSLayoutXAxisAnchor?,
                 bottom: NSLayoutYAxisAnchor?,

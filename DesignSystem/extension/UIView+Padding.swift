@@ -10,7 +10,7 @@ import UIKit
 
 extension UIView {
     
-    func setPadding(_ padding: Padding) {
+    func padding(_ padding: Padding) {
         translatesAutoresizingMaskIntoConstraints = false
         
         self.topAnchor.constraint(equalTo: self.topAnchor, constant: padding.top.rawValue).isActive = true

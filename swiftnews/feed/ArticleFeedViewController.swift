@@ -11,7 +11,12 @@ import UIKit
 class ArticleFeedViewController: UIViewController {
 
     fileprivate let presenter = ArticleFeedPresenter()
-    fileprivate let tableView = UITableView()
+    fileprivate let tableView : UITableView = {
+        let tableView = UITableView()
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 150
+        return tableView
+    }()
     fileprivate let articleCellReuseId = "article"
     
     fileprivate var articles = [Article]()
@@ -30,12 +35,9 @@ class ArticleFeedViewController: UIViewController {
     }
     
     func setupViews() {
-        tableView.estimatedRowHeight = 50
-        tableView.rowHeight = UITableView.automaticDimension
-        tableView.register(ArticleTableViewCell.self, forCellReuseIdentifier: articleCellReuseId)
         view.addSubview(tableView)
+        tableView.register(ArticleTableViewCell.self, forCellReuseIdentifier: articleCellReuseId)
         tableView.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor)
-        
         tableView.dataSource = self
         tableView.delegate = self
     }
@@ -61,12 +63,7 @@ extension ArticleFeedViewController : UITableViewDelegate, UITableViewDataSource
         let article = articles[indexPath.row]
         
         cell.title = article.title
-        if article.thumbnail?.isValidUrl() ?? false {
-            cell.thumbnailUrl = article.thumbnail
-        } else {
-            cell.thumbnailUrl = nil
-        }
-        
+        cell.thumbnailUrl = article.thumbnail
         
         return cell
     }
@@ -74,7 +71,9 @@ extension ArticleFeedViewController : UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedArticle = articles[indexPath.row]
         
-        // TODO: Open new view controller and pass in article
+        let detailViewController = ArticleDetailViewController()
+        detailViewController.article = selectedArticle
+        self.navigationController?.pushViewController(detailViewController, animated: true)
     }
     
 }

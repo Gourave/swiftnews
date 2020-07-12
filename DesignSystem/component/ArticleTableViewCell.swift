@@ -28,10 +28,10 @@ class ArticleTableViewCell : UITableViewCell {
             }
             
             // Add thumbnail imageview when we have a valid thumbnail url
-            addSubview(thumbnail)
+            self.contentView.addSubview(thumbnail)
             let screenSize = UIScreen.main.bounds.size
             let height = screenSize.height / 10
-            thumbnail.anchor(top: titleLabel.bottomAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, height: height)
+            thumbnail.anchor(top: titleLabel.bottomAnchor, left: contentView.leftAnchor, bottom: contentView.bottomAnchor, right: contentView.rightAnchor, height: height)
             thumbnail.loadImage(from: url)
         }
     }
@@ -46,9 +46,9 @@ class ArticleTableViewCell : UITableViewCell {
     }
     
     fileprivate func setupViews() {
-        addSubview(titleLabel)
+        self.contentView.addSubview(titleLabel)
         titleLabel.numberOfLines = 0
-        titleLabel.anchor(top: topAnchor, left: leftAnchor, bottom: nil, right: rightAnchor)
+        titleLabel.anchor(top: contentView.topAnchor, left: contentView.leftAnchor, bottom: nil, right: contentView.rightAnchor)
     }
     
 }
