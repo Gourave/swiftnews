@@ -6,6 +6,8 @@ target 'DesignSystem' do
   use_frameworks!
 
   # Pods for DesignSystem
+  pod 'Alamofire', '~> 5.2'
+  pod 'AlamofireImage', '~> 4.1'
 
 end
 
@@ -14,9 +16,8 @@ target 'swiftnews' do
   use_frameworks!
 
   # Pods for swiftnews
-  pod 'RxSwift', '~> 5'
-  pod 'RxCocoa', '~> 5'
   pod 'Alamofire', '~> 5.2'
+  pod 'AlamofireImage', '~> 4.1'
 
   target 'swiftnewsTests' do
     inherit! :search_paths

@@ -8,8 +8,15 @@
 
 extension Api {
     
-//    func fetchArticles(completion: @escaping Completion<T>) {
-//        makeRequest("/.json", ofType: <#T##Decodable.Protocol#>, completion: completion)
-//    }
+    func fetchArticles(completion: @escaping Completion<[Article]>) {
+        makeRequest("/.json", ofType: ArticleList.self) { result in
+            switch result {
+            case .success(let articleList):
+                completion(.success(articleList.articles))
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
+    }
     
 }

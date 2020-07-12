@@ -34,10 +34,6 @@ class Api {
                 }
                 
                 if let data = response.value {
-                    #if DEBUG
-                    print(data)
-                    #endif
-                    
                     completion(.success(data))
                 }
         }
