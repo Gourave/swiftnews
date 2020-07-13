@@ -8,14 +8,13 @@
 
 import UIKit
 import Alamofire
-import AlamofireImage
 
 // Code in this extension made from https://riptutorial.com/ios/example/29268/alamofireimage
 extension UIImageView {
     
     func loadImage(from url: String) {
         if let image = ImageCache.image(wihtIdentifier: url) {
-            self.image = image.af.imageAspectScaled(toFit: self.bounds.size)
+            self.image = image
             return
         }
         
@@ -29,7 +28,7 @@ extension UIImageView {
                 }
                 
                 ImageCache.add(image: image, withIdentifier: url)
-                self?.image = image.af.imageAspectScaled(toFit: self?.bounds.size ?? CGSize(width: 1, height: 1))
+                self?.image = image
             }
         }
     }

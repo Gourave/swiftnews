@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Foundation
 
 class ArticleTableViewCell : UITableViewCell {
     
@@ -16,7 +17,11 @@ class ArticleTableViewCell : UITableViewCell {
         return label
     }()
     
-    fileprivate let thumbnail = UIImageView()
+    fileprivate let thumbnail : UIImageView = {
+        let imageView = UIImageView()
+        imageView.contentMode = UIView.ContentMode.scaleAspectFit
+        return imageView
+    }()
     
     var title: String = "" {
         didSet {
