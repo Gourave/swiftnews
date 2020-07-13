@@ -6,7 +6,7 @@
 //  Copyright © 2020 Gourave Verma. All rights reserved.
 //
 
-class ApiError : Error {
+struct ApiError : Error {
     
     let statusCode: Int
     let errorMessage: String
