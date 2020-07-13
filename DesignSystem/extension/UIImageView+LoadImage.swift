@@ -14,10 +14,10 @@ import AlamofireImage
 extension UIImageView {
     
     func loadImage(from url: String) {
-//        if let image = ImageCache.image(wihtIdentifier: url) {
-//            self.image = image.af.imageAspectScaled(toFit: self.bounds.size)
-//            return
-//        }
+        if let image = ImageCache.image(wihtIdentifier: url) {
+            self.image = image.af.imageAspectScaled(toFit: self.bounds.size)
+            return
+        }
         
         AF.request(url).responseImage {
             [weak self = self]

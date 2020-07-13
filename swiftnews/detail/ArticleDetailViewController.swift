@@ -15,9 +15,6 @@ class ArticleDetailViewController : UIViewController {
             title = article?.title
             titleLabel.text = article?.title
             body.text = article?.body
-            if let thumbnailUrl = article?.thumbnail {
-                thumbnail.loadImage(from: thumbnailUrl)
-            }
         }
     }
     
@@ -41,6 +38,11 @@ class ArticleDetailViewController : UIViewController {
         setupViews()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        loadThumbnailIfPresent()
+    }
+    
     fileprivate func setupViews() {
         view.backgroundColor = UIColor.white
         
@@ -55,18 +57,20 @@ class ArticleDetailViewController : UIViewController {
         stackView.addArrangedSubview(titleLabel)
         stackView.addArrangedSubview(body)
         
-        let height : CGFloat
-        if article?.thumbnail != nil {
-            let screenSize = UIScreen.main.bounds.size
-            height = screenSize.height / 5
-        } else {
-            height = 0
-        }
-        
-        thumbnail.anchor(top: stackView.topAnchor, left: stackView.leftAnchor, bottom: nil, right: stackView.rightAnchor, height: height)
-        
         scrollView.addSubview(stackView)
         stackView.anchor(top: scrollView.topAnchor, left: view.leftAnchor, bottom: scrollView.bottomAnchor, right: view.rightAnchor, padding: Padding(vertical: .ONE_AND_HALF, horizontal: .ONE))
+        
+        thumbnail.isHidden = article?.thumbnail == nil
+        
+        let screenSize = UIScreen.main.bounds.size
+        let height = screenSize.height / 5
+        thumbnail.anchor(top: stackView.topAnchor, left: stackView.leftAnchor, bottom: nil, right: stackView.rightAnchor, height: height)
+    }
+    
+    fileprivate func loadThumbnailIfPresent() {
+        if let thumbnailUrl = article?.thumbnail {
+            thumbnail.loadImage(from: thumbnailUrl)
+        }
     }
     
 }

@@ -10,7 +10,12 @@ import UIKit
 
 class ArticleTableViewCell : UITableViewCell {
     
-    fileprivate let titleLabel = UILabel()
+    fileprivate let titleLabel : UILabel = {
+        let label = UILabel()
+        label.numberOfLines = 0
+        return label
+    }()
+    
     fileprivate let thumbnail = UIImageView()
     
     var title: String = "" {
@@ -21,17 +26,14 @@ class ArticleTableViewCell : UITableViewCell {
     
     var thumbnailUrl: String? = nil {
         didSet {
-            // Remove the thumbnail from the view is the url is nil
+            // Remove the thumbnail from the view if the url is nil
             guard let url = thumbnailUrl else {
-                thumbnail.removeFromSuperview()
+                thumbnail.isHidden = true
+                thumbnail.image = nil
                 return
             }
             
-            // Add thumbnail imageview when we have a valid thumbnail url
-            self.contentView.addSubview(thumbnail)
-            let screenSize = UIScreen.main.bounds.size
-            let height = screenSize.height / 10
-            thumbnail.anchor(top: titleLabel.bottomAnchor, left: contentView.leftAnchor, bottom: contentView.bottomAnchor, right: contentView.rightAnchor, height: height)
+            thumbnail.isHidden = false
             thumbnail.loadImage(from: url)
         }
     }
@@ -46,9 +48,17 @@ class ArticleTableViewCell : UITableViewCell {
     }
     
     fileprivate func setupViews() {
-        self.contentView.addSubview(titleLabel)
-        titleLabel.numberOfLines = 0
-        titleLabel.anchor(top: contentView.topAnchor, left: contentView.leftAnchor, bottom: nil, right: contentView.rightAnchor)
+        let stackView = UIStackView(frame: frame)
+        stackView.axis = .vertical
+        stackView.addArrangedSubview(titleLabel)
+        stackView.addArrangedSubview(thumbnail)
+        self.contentView.addSubview(stackView)
+        
+        stackView.anchor(top: contentView.topAnchor, left: contentView.leftAnchor, bottom: contentView.bottomAnchor, right: contentView.rightAnchor, padding: Padding(vertical: .ONE, horizontal: .HALF))
+        
+        let screenSize = UIScreen.main.bounds.size
+        let height = screenSize.height / 10
+        thumbnail.anchor(height: height)
     }
     
 }

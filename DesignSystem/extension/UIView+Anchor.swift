@@ -11,10 +11,10 @@ import UIKit
 extension UIView {
     
     // Idea from https://github.com/bhlvoong/LBTAComponents/blob/master/LBTAComponents/Classes/UIView%2BAnchors.swift
-    func anchor(top: NSLayoutYAxisAnchor?,
-                left: NSLayoutXAxisAnchor?,
-                bottom: NSLayoutYAxisAnchor?,
-                right: NSLayoutXAxisAnchor?,
+    func anchor(top: NSLayoutYAxisAnchor? = nil,
+                left: NSLayoutXAxisAnchor? = nil,
+                bottom: NSLayoutYAxisAnchor? = nil,
+                right: NSLayoutXAxisAnchor? = nil,
                 padding: Padding = Padding(),
                 width: CGFloat = 0,
                 height: CGFloat = 0,
